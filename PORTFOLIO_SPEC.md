@@ -28,10 +28,10 @@ Use the following information as the initial source of truth.
 
 - Name: Lai The Ngoc
 - Professional title: Senior Software Engineer | Senior Data Engineer | Technical Lead
-- Education: Hanoi University of Science and Technology (HUST)
+- Education: Hanoi University of Science and Technology (HUST) (2017 – 2022)
 - Major: Computer Engineering – Vietnam-Japan Program (Hedspi)
 - Location: Vietnam
-- Experience: 7+ Years of Engineering Experience (since 2019)
+- Experience: 7+ Years of Engineering Experience (Practicing software engineering since 2019)
 
 ### Professional Experience
 

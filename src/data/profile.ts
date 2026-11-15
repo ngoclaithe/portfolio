@@ -6,8 +6,8 @@ export const profile = {
   education: {
     institution: "Hanoi University of Science and Technology (HUST)",
     degree: "Computer Engineering (Hedspi – Vietnam-Japan Elite Program)",
-    period: "2016 – 2021",
-    highlights: "Rigorous bilingual (Vietnamese/Japanese) engineering curriculum covering systems programming, distributed computing, algorithms, and computer networks."
+    period: "2017 – 2022",
+    highlights: "Rigorous bilingual (Vietnamese/Japanese) engineering curriculum covering systems programming, distributed computing, algorithms, and computer networks. Started hands-on professional software engineering in 2019."
   },
   location: "Vietnam",
   languages: [
