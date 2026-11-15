@@ -22,7 +22,7 @@ export const profile = {
   ],
   socials: {
     github: "https://github.com/ngoclaithe",
-    email: "laingoc99@gmail.com",
+    email: "laithengoc@dosutech.site",
     linkedin: "https://linkedin.com/in/laithengoc",
     portfolioUrl: "https://laithengoc.dosutech.site"
   },
