@@ -54,7 +54,7 @@ export const Header: React.FC = () => {
                   {t("nav.expBadge")}
                 </span>
               </div>
-              <div className="text-[11px] text-neutral-400 font-mono">Senior Engineer | Astec</div>
+              <div className="text-[11px] text-neutral-400 font-mono">Data Engineer | Astec</div>
             </div>
           </a>
 

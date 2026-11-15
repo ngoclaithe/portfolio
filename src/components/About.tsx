@@ -24,7 +24,26 @@ export const About: React.FC = () => {
     ]
   };
 
+  const localizedBio = {
+    vi: [
+      "Tôi là Kỹ sư Phần mềm và Dữ liệu (Software Engineer | Data Engineer) tại Việt Nam với hơn 7 năm kinh nghiệm thực tế (bắt đầu làm việc từ năm 2019 khi còn là sinh viên ĐH Bách Khoa Hà Nội).",
+      "Kinh nghiệm thực chiến của tôi trải qua các lĩnh vực: từ nghiên cứu phát triển gateway IoT và thiết bị Smart Home tại Arrow Tech, phát triển phần mềm doanh nghiệp (ERP, HRM, logistics) cho đối tác Nhật Bản và khách hàng doanh nghiệp, đến xây dựng data pipeline và kho dữ liệu phân tích tại Astec (doanh nghiệp FDI Nhật Bản).",
+      "Tôi chú trọng tính ổn định, độ tin cậy của dữ liệu và giải pháp kỹ thuật thực tế giải quyết đúng bài toán nghiệp vụ."
+    ],
+    en: [
+      "I am a Software Engineer and Data Engineer based in Vietnam with 7+ years of hands-on experience, having started practical engineering work in 2019 while studying at Hanoi University of Science and Technology (HUST).",
+      "My engineering path spans low-level IoT gateway and smart home device development at Arrow Tech, enterprise software (manufacturing ERP, customs trade, HRM payroll) for Japanese and enterprise partners, and high-performance data pipelines and analytical data warehouses at Astec (Japanese FDI technology enterprise).",
+      "I focus on operational stability, strict data integrity, and pragmatic engineering solutions that directly solve core business challenges."
+    ],
+    ja: [
+      "ベトナム在住のソフトウェアエンジニア兼データエンジニアです。ハノイ工科大学在学中の2019年より実務開発を開始し、7年以上の現場実績を積んできました。",
+      "これまで、Arrow TechにおけるIoTゲートウェイおよびスマートホーム機器の研究開発、日系パートナーや企業向けの業務基幹システム（製造業ERP、貿易税関、人事労務給与）の開発、そしてAstec（日系FDI企業）におけるデータパイプラインおよび分析基盤の構築に携わってきました。",
+      "過度な技術の複雑化を避け、システムの高稼働率、データ整合性、そして現場の課題を確実に解決する実用的なエンジニアリングを追求しています。"
+    ]
+  };
+
   const currentLanguages = localizedLanguages[currentLang] || localizedLanguages.en;
+  const currentBio = localizedBio[currentLang] || localizedBio.en;
 
   return (
     <section id="about" className="py-20 border-t border-neutral-800/80 bg-neutral-950/60">
@@ -43,7 +62,7 @@ export const About: React.FC = () => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
           {/* Main narrative */}
           <div className="lg:col-span-7 space-y-5 text-neutral-300 leading-relaxed text-sm sm:text-base">
-            {profile.bio.map((paragraph, idx) => (
+            {currentBio.map((paragraph, idx) => (
               <p key={idx} className="text-neutral-300">
                 {paragraph}
               </p>

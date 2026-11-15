@@ -15,7 +15,7 @@ export const projects: Project[] = [
     solution:
       "Engineered an integrated ERP system that unifies import/export document lifecycles, automated multi-currency accounting entries, real-time customs dossier tracking, and partner freight reconciliation on a single ledger.",
     myRole: [
-      "Technical Lead & System Architect responsible for database schema modeling, ACID transaction boundaries, and core backend services.",
+      "Core Backend Engineer responsible for database schema modeling, ACID transaction boundaries, and core backend services.",
       "Designed the multi-currency accounting engine handling fluctuating FX rates and automatic tax debit/credit ledger generation.",
       "Implemented role-based customs document state machine preventing unauthorized modifications once manifests are signed."
     ],
@@ -98,7 +98,7 @@ export const projects: Project[] = [
     solution:
       "Engineered an automated HRM platform that unifies biometric time-clock ingestion, customizable holiday/shift rules, granular RBAC approval workflows, and compliant multi-tier payroll runs.",
     myRole: [
-      "Lead Backend Architect for payroll formula engine, timekeeping ingestion pipelines, and organizational hierarchy trees.",
+      "Core Backend Engineer for payroll formula engine, timekeeping ingestion pipelines, and organizational hierarchy trees.",
       "Designed dynamic role-based permission system (RBAC) supporting corporate matrices (Director, HR, Department Head, Employee).",
       "Created batch processing jobs calculating complex deductions, social insurance brackets, and progressive personal income tax."
     ],
@@ -139,7 +139,7 @@ export const projects: Project[] = [
     solution:
       "Architected a scalable LMS with resilient offline-first test autosave, real-time Socket.IO synchronization, and partitioned database querying for student analytics.",
     myRole: [
-      "Full-stack Architecture & Core Backend Engineer.",
+      "Full-stack Engineer & Core Backend Developer.",
       "Engineered the real-time proctoring and autosave mechanism handling intermittent client network drops.",
       "Implemented automated question randomization, grading engine, and comprehensive student progress dashboards."
     ],
@@ -221,7 +221,7 @@ export const projects: Project[] = [
     solution:
       "Designed and deployed a decoupled data engineering platform featuring automated ELT pipelines, columnar data warehousing, and fast aggregated reporting APIs.",
     myRole: [
-      "Lead Data Platform Engineer designing ELT synchronization pipelines and ClickHouse dimensional schema.",
+      "Data Platform Engineer designing ELT synchronization pipelines and ClickHouse dimensional schema.",
       "Implemented incremental data extraction using change-data-capture (CDC) triggers and batch upserts.",
       "Built high-throughput aggregation microservices serving executive dashboards with sub-second response times."
     ],
@@ -301,7 +301,7 @@ export const projects: Project[] = [
     solution:
       "Designed modern Next.js/React storefronts backed by PostgreSQL transactional locks and Redis-powered inventory reservation counters.",
     myRole: [
-      "Full-stack Technical Lead designing data models, catalog indexing, and checkout state machines.",
+      "Full-stack Engineer designing data models, catalog indexing, and checkout state machines.",
       "Implemented atomic stock decrement logic preventing overselling during flash promotions.",
       "Integrated secure payment gateways, automated invoice dispatching, and multi-currency formatting."
     ],

@@ -1,10 +1,11 @@
 import React from "react";
-import { experiences } from "../data/experience";
+import { experiencesByLang } from "../data/experience";
 import { useI18n } from "../i18n/context";
 import { Calendar, MapPin, ChevronRight, CheckCircle2 } from "lucide-react";
 
 export const Experience: React.FC = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const currentExperiences = experiencesByLang[lang] || experiencesByLang.en;
 
   return (
     <section id="experience" className="py-20 border-t border-neutral-800/80 bg-neutral-950">
@@ -32,7 +33,7 @@ export const Experience: React.FC = () => {
 
         {/* Timeline container */}
         <div className="space-y-8 relative before:absolute before:inset-0 before:left-3 md:before:left-4 before:w-0.5 before:bg-neutral-800">
-          {experiences.map((exp, idx) => (
+          {currentExperiences.map((exp, idx) => (
             <div key={idx} className="relative pl-8 md:pl-12 group">
               {/* Timeline marker */}
               <div className="absolute left-1.5 md:left-2.5 top-1.5 -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-950 border-2 border-neutral-700 group-hover:border-emerald-500 group-hover:bg-emerald-500/20 transition-all flex items-center justify-center">
