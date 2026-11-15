@@ -13,7 +13,7 @@ export const profile = {
   languages: [
     { name: "Vietnamese", level: "Native" },
     { name: "Japanese", level: "Professional Working (Bilingual IT & Japanese Clients)" },
-    { name: "English", level: "Professional Working" }
+    { name: "English", level: "Technical Reading & Documentation Comprehension" }
   ],
   bio: [
     "I am a Senior Software Engineer and Data Engineer with 7+ years of experience designing and operating mission-critical enterprise systems, distributed backends, and high-performance data workflows.",

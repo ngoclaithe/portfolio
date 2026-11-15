@@ -4,7 +4,27 @@ import { useI18n } from "../i18n/context";
 import { GraduationCap, Globe2, Layers, CheckCircle2 } from "lucide-react";
 
 export const About: React.FC = () => {
-  const { t } = useI18n();
+  const { t, lang: currentLang } = useI18n();
+
+  const localizedLanguages = {
+    vi: [
+      { name: "Tiếng Việt", level: "Bản ngữ" },
+      { name: "Tiếng Nhật", level: "Làm việc với khách hàng & IT Nhật Bản" },
+      { name: "Tiếng Anh", level: "Đọc hiểu văn bản & tài liệu kỹ thuật" }
+    ],
+    en: [
+      { name: "Vietnamese", level: "Native" },
+      { name: "Japanese", level: "Professional Working (Japanese IT Clients)" },
+      { name: "English", level: "Technical Reading & Documentation Comprehension" }
+    ],
+    ja: [
+      { name: "ベトナム語", level: "母国語" },
+      { name: "日本語", level: "実務対応（日系企業・IT業務対応）" },
+      { name: "英語", level: "技術文書・仕様書の読解" }
+    ]
+  };
+
+  const currentLanguages = localizedLanguages[currentLang] || localizedLanguages.en;
 
   return (
     <section id="about" className="py-20 border-t border-neutral-800/80 bg-neutral-950/60">
@@ -83,10 +103,10 @@ export const About: React.FC = () => {
                 <h4 className="font-semibold text-white text-sm">{t("about.langTitle")}</h4>
               </div>
               <div className="space-y-2">
-                {profile.languages.map((lang) => (
-                  <div key={lang.name} className="flex items-center justify-between text-xs py-1 border-b border-neutral-800/60 last:border-0">
-                    <span className="font-medium text-neutral-200">{lang.name}</span>
-                    <span className="font-mono text-neutral-400">{lang.level}</span>
+                {currentLanguages.map((l) => (
+                  <div key={l.name} className="flex items-center justify-between text-xs py-1 border-b border-neutral-800/60 last:border-0">
+                    <span className="font-medium text-neutral-200">{l.name}</span>
+                    <span className="font-mono text-neutral-400">{l.level}</span>
                   </div>
                 ))}
               </div>
