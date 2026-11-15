@@ -1,8 +1,11 @@
 import React from "react";
 import { skillCategories } from "../data/skills";
-import { Cpu, Server, Database, Radio, Wrench, ShieldCheck, Check } from "lucide-react";
+import { useI18n } from "../i18n/context";
+import { Cpu, Server, Database, Radio, Wrench, Check } from "lucide-react";
 
 export const Skills: React.FC = () => {
+  const { t } = useI18n();
+
   const getCategoryIcon = (index: number) => {
     switch (index) {
       case 0:
@@ -24,20 +27,22 @@ export const Skills: React.FC = () => {
         {/* Section title */}
         <div className="flex items-center gap-2 mb-3">
           <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">Technical Depth</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">
+            {t("skills.badge")}
+          </span>
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
           <div>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-2">
-              Engineering Domains & Capabilities
+              {t("skills.title")}
             </h2>
             <p className="text-sm text-neutral-400 max-w-2xl">
-              Organized by architectural domain rather than arbitrary percentage bars. Built on 7+ years of real-world production verification.
+              {t("skills.subtitle")}
             </p>
           </div>
           <div className="text-xs font-mono text-neutral-400">
-            Verified Production Experience
+            {t("skills.verifiedBadge")}
           </div>
         </div>
 

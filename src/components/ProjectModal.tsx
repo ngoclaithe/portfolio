@@ -1,5 +1,6 @@
 import React from "react";
 import { Project } from "../types";
+import { useI18n } from "../i18n/context";
 import { X, ExternalLink, ShieldAlert, Cpu, CheckCircle2, AlertTriangle, Layers, Activity } from "lucide-react";
 
 interface ProjectModalProps {
@@ -8,6 +9,8 @@ interface ProjectModalProps {
 }
 
 export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) => {
+  const { t } = useI18n();
+
   if (!project) return null;
 
   return (
@@ -25,7 +28,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <X className="w-5 h-5" />
         </button>
 
-        {/* Category & NDA Notice */}
+        {/* Category & Badge */}
         <div className="flex items-center gap-2 mb-3">
           <span className="px-2.5 py-0.5 rounded text-xs font-mono font-medium bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
             {project.category}
@@ -47,7 +50,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div className="p-3 rounded-lg bg-amber-500/10 border border-amber-500/20 text-xs text-amber-200/90 flex items-start gap-2.5 mb-6">
             <ShieldAlert className="w-4 h-4 text-amber-400 shrink-0 mt-0.5" />
             <span>
-              <strong>NDA Safeguard:</strong> {project.ndaNotice}
+              <strong>{t("projects.modalNda")}</strong> {project.ndaNotice}
             </span>
           </div>
         )}
@@ -69,7 +72,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div>
             <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1.5 flex items-center gap-1.5">
               <AlertTriangle className="w-3.5 h-3.5 text-amber-400" />
-              Business Challenge & Problem Statement
+              {t("projects.modalProblem")}
             </h3>
             <p className="text-sm text-neutral-300 leading-relaxed bg-neutral-950/40 p-3.5 rounded-lg border border-neutral-850">
               {project.problem}
@@ -79,7 +82,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div>
             <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-1.5 flex items-center gap-1.5">
               <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-              Architectural Solution
+              {t("projects.modalSolution")}
             </h3>
             <p className="text-sm text-neutral-300 leading-relaxed bg-neutral-950/40 p-3.5 rounded-lg border border-neutral-850">
               {project.solution}
@@ -91,7 +94,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="mb-6">
           <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2 flex items-center gap-1.5">
             <Cpu className="w-3.5 h-3.5 text-sky-400" />
-            Engineering Contributions & Role
+            {t("projects.modalRole")}
           </h3>
           <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-300 bg-neutral-950/40 p-3.5 rounded-lg border border-neutral-850">
             {project.myRole.map((item, idx) => (
@@ -108,7 +111,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div>
             <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2 flex items-center gap-1.5">
               <Layers className="w-3.5 h-3.5 text-purple-400" />
-              Architecture Highlights
+              {t("projects.modalArch")}
             </h3>
             <ul className="space-y-1.5 text-xs text-neutral-300 bg-neutral-950/40 p-3 rounded-lg border border-neutral-850">
               {project.architectureHighlights.map((arch, idx) => (
@@ -123,7 +126,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           <div>
             <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2 flex items-center gap-1.5">
               <Activity className="w-3.5 h-3.5 text-amber-400" />
-              Key Engineering Challenges
+              {t("projects.modalChallenges")}
             </h3>
             <ul className="space-y-1.5 text-xs text-neutral-300 bg-neutral-950/40 p-3 rounded-lg border border-neutral-850">
               {project.keyChallenges.map((chal, idx) => (
@@ -140,7 +143,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         <div className="mb-6">
           <h3 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2 flex items-center gap-1.5">
             <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-            Results & Business Impact
+            {t("projects.modalResults")}
           </h3>
           <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-300 bg-neutral-950/40 p-3.5 rounded-lg border border-neutral-850">
             {project.resultsAndImpact.map((res, idx) => (
@@ -154,14 +157,14 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
 
         {/* Tech Stack */}
         <div className="mb-8">
-          <h4 className="text-xs font-mono text-neutral-400 mb-2">Technologies Used:</h4>
+          <h4 className="text-xs font-mono text-neutral-400 mb-2">{t("projects.modalTech")}</h4>
           <div className="flex flex-wrap gap-1.5">
-            {project.technologies.map((t) => (
+            {project.technologies.map((tech) => (
               <span
-                key={t}
+                key={tech}
                 className="px-2.5 py-1 rounded text-xs font-mono bg-neutral-800 text-neutral-300 border border-neutral-700/60"
               >
-                {t}
+                {tech}
               </span>
             ))}
           </div>
@@ -170,7 +173,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
         {/* Modal Actions */}
         <div className="flex items-center justify-between pt-4 border-t border-neutral-800">
           <div className="text-[11px] font-mono text-neutral-500">
-            All system parameters sanitized per NDA.
+            {t("projects.modalSanitizedNote")}
           </div>
           <div className="flex items-center gap-3">
             {project.liveUrl && (
@@ -180,7 +183,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
                 rel="noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-neutral-950 font-semibold text-xs transition-colors"
               >
-                Visit System Portal
+                {t("projects.modalVisit")}
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
             )}
@@ -188,7 +191,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
               onClick={onClose}
               className="px-4 py-2 rounded-lg bg-neutral-800 hover:bg-neutral-700 text-neutral-300 text-xs font-medium transition-colors"
             >
-              Close
+              {t("projects.modalClose")}
             </button>
           </div>
         </div>

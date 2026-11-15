@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { profile } from "../data/profile";
-import { Mail, Github, Linkedin, Copy, Check, Send, ArrowUpRight, ShieldCheck } from "lucide-react";
+import { useI18n } from "../i18n/context";
+import { Mail, Github, Linkedin, Copy, Check, Send, ArrowUpRight } from "lucide-react";
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
+  const { t } = useI18n();
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(profile.socials.email);
@@ -18,15 +20,15 @@ export const Contact: React.FC = () => {
           {/* Section pill */}
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-mono text-emerald-400 mb-4">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-            Let's Collaborate
+            {t("contact.badge")}
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-6">
-            Have a Technical Challenge or Strategic Opportunity?
+            {t("contact.title")}
           </h2>
 
           <p className="text-base sm:text-lg text-neutral-300 leading-relaxed mb-10">
-            Whether you need a Senior Software Engineer, Data Platform Architect, or Technical Consultant for mission-critical enterprise systems, I'm always open to discussing new engineering challenges.
+            {t("contact.subtitle")}
           </p>
 
           {/* Email Box */}
@@ -36,7 +38,7 @@ export const Contact: React.FC = () => {
                 <Mail className="w-6 h-6" />
               </div>
               <div>
-                <div className="text-xs font-mono text-neutral-400 uppercase tracking-wider">Direct Email</div>
+                <div className="text-xs font-mono text-neutral-400 uppercase tracking-wider">{t("contact.directEmail")}</div>
                 <div className="text-base sm:text-lg font-bold text-white font-mono">{profile.socials.email}</div>
               </div>
             </div>
@@ -49,12 +51,12 @@ export const Contact: React.FC = () => {
                 {copied ? (
                   <>
                     <Check className="w-4 h-4 text-emerald-400" />
-                    Copied!
+                    {t("contact.copied")}
                   </>
                 ) : (
                   <>
                     <Copy className="w-4 h-4" />
-                    Copy Email
+                    {t("contact.copyEmail")}
                   </>
                 )}
               </button>
@@ -64,7 +66,7 @@ export const Contact: React.FC = () => {
                 className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-lg bg-emerald-600 hover:bg-emerald-500 text-neutral-950 font-semibold text-xs transition-colors"
               >
                 <Send className="w-4 h-4" />
-                Send Message
+                {t("contact.sendMessage")}
               </a>
             </div>
           </div>

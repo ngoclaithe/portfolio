@@ -1,18 +1,23 @@
 import React from "react";
 import { profile } from "../data/profile";
-import { GraduationCap, Code2, Globe2, Layers, CheckCircle2, Award } from "lucide-react";
+import { useI18n } from "../i18n/context";
+import { GraduationCap, Globe2, Layers, CheckCircle2 } from "lucide-react";
 
 export const About: React.FC = () => {
+  const { t } = useI18n();
+
   return (
     <section id="about" className="py-20 border-t border-neutral-800/80 bg-neutral-950/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title */}
         <div className="flex items-center gap-2 mb-3">
           <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">Background & Philosophy</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">
+            {t("about.badge")}
+          </span>
         </div>
         <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-10">
-          7 Years of Engineering Rigor & Pragmatism
+          {t("about.title")}
         </h2>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
@@ -27,24 +32,24 @@ export const About: React.FC = () => {
             <div className="pt-4 border-t border-neutral-800">
               <h4 className="text-sm font-semibold text-white uppercase tracking-wider mb-3 font-mono flex items-center gap-2">
                 <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Core Engineering Tenets
+                {t("about.coreTenets")}
               </h4>
               <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm text-neutral-400">
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-400 font-bold">•</span>
-                  <span><strong>Zero Data-Loss:</strong> Strict transactional integrity and rollback safety.</span>
+                  <span><strong>{t("about.tenet1Title")}</strong> {t("about.tenet1Desc")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-400 font-bold">•</span>
-                  <span><strong>Pragmatic Architecture:</strong> Simplicity and debuggability over microservice sprawl.</span>
+                  <span><strong>{t("about.tenet2Title")}</strong> {t("about.tenet2Desc")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-400 font-bold">•</span>
-                  <span><strong>Bilingual Delivery:</strong> Flawless alignment with Japanese & international business practices.</span>
+                  <span><strong>{t("about.tenet3Title")}</strong> {t("about.tenet3Desc")}</span>
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-emerald-400 font-bold">•</span>
-                  <span><strong>Cost & Latency Efficiency:</strong> Hardware & resource optimization before horizontal scale.</span>
+                  <span><strong>{t("about.tenet4Title")}</strong> {t("about.tenet4Desc")}</span>
                 </li>
               </ul>
             </div>
@@ -59,13 +64,13 @@ export const About: React.FC = () => {
                   <GraduationCap className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="font-semibold text-white text-sm">{profile.education.institution}</h4>
-                  <p className="text-xs text-neutral-400 font-mono">{profile.education.period}</p>
+                  <h4 className="font-semibold text-white text-sm">{t("about.eduTitle")}</h4>
+                  <p className="text-xs text-neutral-400 font-mono">{t("about.eduPeriod")}</p>
                 </div>
               </div>
-              <p className="text-xs font-semibold text-emerald-400 mb-2">{profile.education.degree}</p>
+              <p className="text-xs font-semibold text-emerald-400 mb-2">{t("about.eduDegree")}</p>
               <p className="text-xs text-neutral-400 leading-relaxed">
-                {profile.education.highlights}
+                {t("about.eduDesc")}
               </p>
             </div>
 
@@ -75,7 +80,7 @@ export const About: React.FC = () => {
                 <div className="p-2 rounded-lg bg-sky-500/10 text-sky-400 border border-sky-500/20">
                   <Globe2 className="w-5 h-5" />
                 </div>
-                <h4 className="font-semibold text-white text-sm">Working Languages & Cultural Agility</h4>
+                <h4 className="font-semibold text-white text-sm">{t("about.langTitle")}</h4>
               </div>
               <div className="space-y-2">
                 {profile.languages.map((lang) => (
@@ -93,7 +98,7 @@ export const About: React.FC = () => {
                 <div className="p-2 rounded-lg bg-amber-500/10 text-amber-400 border border-amber-500/20">
                   <Layers className="w-5 h-5" />
                 </div>
-                <h4 className="font-semibold text-white text-sm">Domain Experience</h4>
+                <h4 className="font-semibold text-white text-sm">{t("about.domainsTitle")}</h4>
               </div>
               <div className="flex flex-wrap gap-1.5 text-xs">
                 {["Manufacturing & Printing ERP", "Import/Export & Customs", "Enterprise HRM & Payroll", "EdTech LMS", "IoT Edge & Telemetry", "Analytical OLAP Platforms", "High-Volume E-Commerce"].map((domain) => (

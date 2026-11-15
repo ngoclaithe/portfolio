@@ -2,11 +2,13 @@ import React, { useState } from "react";
 import { projects } from "../data/projects";
 import { Project } from "../types";
 import { ProjectModal } from "./ProjectModal";
-import { ArrowUpRight, ShieldCheck, Layers, Cpu, Server, Database } from "lucide-react";
+import { useI18n } from "../i18n/context";
+import { ArrowUpRight, ShieldCheck } from "lucide-react";
 
 export const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
+  const { t } = useI18n();
 
   const categories = ["All", "ERP", "HRM", "Data Platform", "LMS", "E-Commerce", "IoT / Embedded"];
 
@@ -21,22 +23,24 @@ export const Projects: React.FC = () => {
         {/* Section title */}
         <div className="flex items-center gap-2 mb-3">
           <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">Engineering Case Studies</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">
+            {t("projects.badge")}
+          </span>
         </div>
 
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4">
           <div>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-2">
-              Enterprise Systems & Architecture
+              {t("projects.title")}
             </h2>
             <p className="text-sm text-neutral-400 max-w-2xl">
-              In-depth engineering reviews of mission-critical systems designed across manufacturing, logistics, human resources, and high-volume data platforms.
+              {t("projects.subtitle")}
             </p>
           </div>
 
           <div className="flex items-center gap-2 text-xs font-mono text-neutral-400 px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 shrink-0 self-start md:self-auto">
             <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
-            <span>Strict NDA Compliance Sanitization</span>
+            <span>{t("projects.sanitizedBadge")}</span>
           </div>
         </div>
 
@@ -52,7 +56,7 @@ export const Projects: React.FC = () => {
                   : "bg-neutral-900/80 text-neutral-400 hover:text-white border border-neutral-800 hover:border-neutral-700"
               }`}
             >
-              {cat}
+              {cat === "All" ? t("projects.all") : cat}
             </button>
           ))}
         </div>
@@ -72,7 +76,7 @@ export const Projects: React.FC = () => {
                     {project.category}
                   </span>
                   <div className="flex items-center gap-1 text-[11px] font-mono text-neutral-500 group-hover:text-emerald-400 transition-colors">
-                    <span>Inspect</span>
+                    <span>{t("projects.inspect")}</span>
                     <ArrowUpRight className="w-3.5 h-3.5" />
                   </div>
                 </div>
@@ -103,12 +107,12 @@ export const Projects: React.FC = () => {
               {/* Bottom Tech stack */}
               <div className="pt-4 border-t border-neutral-800/60">
                 <div className="flex flex-wrap gap-1.5">
-                  {project.technologies.slice(0, 4).map((t) => (
+                  {project.technologies.slice(0, 4).map((tech) => (
                     <span
-                      key={t}
+                      key={tech}
                       className="px-2 py-0.5 rounded text-[10px] font-mono bg-neutral-800/70 text-neutral-400 border border-neutral-750"
                     >
-                      {t}
+                      {tech}
                     </span>
                   ))}
                   {project.technologies.length > 4 && (

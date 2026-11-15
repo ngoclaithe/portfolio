@@ -1,28 +1,32 @@
 import React from "react";
 import { experiences } from "../data/experience";
-import { Briefcase, Calendar, MapPin, ChevronRight, CheckCircle2 } from "lucide-react";
+import { useI18n } from "../i18n/context";
+import { Calendar, MapPin, ChevronRight, CheckCircle2 } from "lucide-react";
 
 export const Experience: React.FC = () => {
+  const { t } = useI18n();
+
   return (
     <section id="experience" className="py-20 border-t border-neutral-800/80 bg-neutral-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title */}
         <div className="flex items-center gap-2 mb-3">
           <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
-          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">Career Timeline</span>
+          <span className="text-xs font-mono uppercase tracking-widest text-emerald-400">
+            {t("experience.badge")}
+          </span>
         </div>
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
           <div>
             <h2 className="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-2">
-              7+ Years of Engineering Progression
+              {t("experience.title")}
             </h2>
             <p className="text-sm text-neutral-400">
-              From low-level embedded IoT to mission-critical enterprise systems and large-scale data platforms.
+              {t("experience.subtitle")}
             </p>
           </div>
           <div className="mt-4 md:mt-0 font-mono text-xs text-neutral-400 px-3 py-1.5 rounded-lg bg-neutral-900 border border-neutral-800 inline-flex items-center gap-2">
-            <span className="text-emerald-400 font-bold">2019 — 2026</span>
-            <span>• Continuous Track Record</span>
+            <span className="text-emerald-400 font-bold">{t("experience.tag")}</span>
           </div>
         </div>
 
@@ -68,7 +72,9 @@ export const Experience: React.FC = () => {
 
                 {/* Selected Responsibilities */}
                 <div className="mb-4">
-                  <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">Key Engineering Contributions:</h4>
+                  <h4 className="text-xs font-mono uppercase tracking-wider text-neutral-400 mb-2">
+                    {t("experience.keyContributions")}
+                  </h4>
                   <ul className="space-y-1.5 text-xs sm:text-sm text-neutral-300">
                     {exp.responsibilities.map((resp, rIdx) => (
                       <li key={rIdx} className="flex items-start gap-2">
@@ -84,7 +90,7 @@ export const Experience: React.FC = () => {
                   <div className="mb-5 p-3 rounded-lg bg-neutral-950/60 border border-neutral-800/60">
                     <h5 className="text-[11px] font-mono uppercase text-emerald-400 font-semibold mb-1.5 flex items-center gap-1.5">
                       <CheckCircle2 className="w-3.5 h-3.5" />
-                      Verified Engineering Impact:
+                      {t("experience.verifiedImpact")}
                     </h5>
                     <ul className="space-y-1 text-xs text-neutral-300">
                       {exp.impactHighlights.map((impact, iIdx) => (
@@ -99,13 +105,15 @@ export const Experience: React.FC = () => {
 
                 {/* Tech badges */}
                 <div className="flex flex-wrap items-center gap-1.5 pt-3 border-t border-neutral-800/60">
-                  <span className="text-[11px] font-mono text-neutral-500 mr-1">Stack:</span>
-                  {exp.technologies.map((t) => (
+                  <span className="text-[11px] font-mono text-neutral-500 mr-1">
+                    {t("experience.stack")}
+                  </span>
+                  {exp.technologies.map((tech) => (
                     <span
-                      key={t}
+                      key={tech}
                       className="px-2 py-0.5 rounded text-[11px] font-mono bg-neutral-800/90 text-neutral-300 border border-neutral-700/50"
                     >
-                      {t}
+                      {tech}
                     </span>
                   ))}
                 </div>
