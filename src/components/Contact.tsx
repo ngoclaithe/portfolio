@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { profile } from "../data/profile";
 import { useI18n } from "../i18n/context";
-import { Mail, Github, Linkedin, Copy, Check, Send, ArrowUpRight } from "lucide-react";
+import { Mail, Github, Copy, Check, Send, ArrowUpRight } from "lucide-react";
 
 export const Contact: React.FC = () => {
   const [copied, setCopied] = useState(false);
@@ -77,21 +77,10 @@ export const Contact: React.FC = () => {
               href={profile.socials.github}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-700 transition-colors text-xs font-mono"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-700 transition-colors text-xs font-mono"
             >
               <Github className="w-4 h-4 text-emerald-400" />
               GitHub
-              <ArrowUpRight className="w-3 h-3 text-neutral-500" />
-            </a>
-
-            <a
-              href={profile.socials.linkedin}
-              target="_blank"
-              rel="noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-300 hover:text-white hover:border-neutral-700 transition-colors text-xs font-mono"
-            >
-              <Linkedin className="w-4 h-4 text-emerald-400" />
-              LinkedIn
               <ArrowUpRight className="w-3 h-3 text-neutral-500" />
             </a>
           </div>

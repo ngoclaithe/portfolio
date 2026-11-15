@@ -23,7 +23,6 @@ export const profile = {
   socials: {
     github: "https://github.com/ngoclaithe",
     email: "laithengoc@dosutech.site",
-    linkedin: "https://linkedin.com/in/laithengoc",
     portfolioUrl: "https://laithengoc.dosutech.site"
   },
   stats: [

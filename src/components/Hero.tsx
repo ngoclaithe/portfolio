@@ -1,7 +1,7 @@
 import React from "react";
 import { profile } from "../data/profile";
 import { useI18n } from "../i18n/context";
-import { ArrowDown, Github, Linkedin, Mail, ExternalLink, ShieldAlert, Cpu, Database, Server } from "lucide-react";
+import { ArrowDown, Github, Mail, ExternalLink, ShieldAlert, Cpu, Database, Server } from "lucide-react";
 
 export const Hero: React.FC = () => {
   const { t } = useI18n();
@@ -75,15 +75,6 @@ export const Hero: React.FC = () => {
                   <Github className="w-4 h-4" />
                 </a>
                 <a
-                  href={profile.socials.linkedin}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="p-2.5 rounded-lg bg-neutral-900/80 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
-                  title="LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                <a
                   href={`mailto:${profile.socials.email}`}
                   className="p-2.5 rounded-lg bg-neutral-900/80 border border-neutral-800 text-neutral-400 hover:text-white hover:border-neutral-700 transition-colors"
                   title="Email"
@@ -114,26 +105,13 @@ export const Hero: React.FC = () => {
               {/* Decorative backlight glow */}
               <div className="absolute -inset-1.5 bg-gradient-to-tr from-emerald-500/40 via-sky-500/20 to-emerald-400/30 rounded-3xl blur-xl opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
 
-              {/* Avatar frame */}
+              {/* Avatar frame (Clean, no text overlay obscuring face) */}
               <div className="relative rounded-2xl bg-neutral-900 p-2 border border-neutral-800 shadow-2xl overflow-hidden max-w-[280px] sm:max-w-[320px]">
                 <img
                   src="/avatar.jpg"
                   alt={profile.name}
-                  className="w-full h-auto aspect-square object-cover rounded-xl grayscale-[20%] group-hover:grayscale-0 transition-all duration-500 scale-[1.01] group-hover:scale-105"
+                  className="w-full h-auto aspect-square object-cover rounded-xl transition-all duration-500 scale-[1.01] group-hover:scale-105"
                 />
-
-                {/* Floating badge inside image */}
-                <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl bg-neutral-950/85 backdrop-blur-md border border-neutral-800/80 shadow-lg">
-                  <div className="flex items-center justify-between">
-                    <div>
-                      <div className="text-xs font-bold text-white font-mono">{profile.name}</div>
-                      <div className="text-[11px] text-emerald-400 font-mono">Senior Engineer</div>
-                    </div>
-                    <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/30">
-                      HUST • 7+ Yrs
-                    </span>
-                  </div>
-                </div>
               </div>
             </div>
           </div>
