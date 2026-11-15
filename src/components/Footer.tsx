@@ -45,10 +45,10 @@ export const Footer: React.FC = () => {
         {/* Legal & Copyright */}
         <div className="mt-8 pt-6 border-t border-neutral-850 flex flex-col sm:flex-row items-center justify-between gap-3 text-[11px] text-neutral-500 font-mono">
           <div>
-            © {new Date().getFullYear()} {profile.name}. Designed & Built for Engineering Rigor.
+            © {new Date().getFullYear()} {profile.name}. All rights reserved.
           </div>
           <div>
-            Deployed on VPS via Nginx • DNS: laithengoc.dosutech.site
+            Designed for Engineering Rigor & Scalability.
           </div>
         </div>
       </div>
