@@ -57,7 +57,7 @@ export const Hero: React.FC = () => {
               </a>
 
               <a
-                href="#live-systems"
+                href="#deployed-projects"
                 className="inline-flex items-center gap-2 px-5 py-3 rounded-lg bg-neutral-900 hover:bg-neutral-800 text-neutral-200 border border-neutral-800 font-medium text-sm transition-all"
               >
                 {t("hero.ctaLive")}

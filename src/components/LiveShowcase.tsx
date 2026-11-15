@@ -7,7 +7,7 @@ export const LiveShowcase: React.FC = () => {
   const { t } = useI18n();
 
   return (
-    <section id="live-systems" className="py-20 border-t border-neutral-800/80 bg-neutral-950">
+    <section id="deployed-projects" className="py-20 border-t border-neutral-800/80 bg-neutral-950">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title */}
         <div className="flex items-center gap-2 mb-3">

@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
     { label: t("nav.about"), href: "#about" },
     { label: t("nav.experience"), href: "#experience" },
     { label: t("nav.projects"), href: "#projects" },
-    { label: t("nav.liveSystems"), href: "#live-systems" },
+    { label: t("nav.liveSystems"), href: "#deployed-projects" },
     { label: t("nav.skills"), href: "#skills" },
     { label: t("nav.articles"), href: "#articles" }
   ];
@@ -91,7 +91,7 @@ export const Header: React.FC = () => {
 
           {/* Mobile hamburger & mobile language switcher */}
           <div className="flex sm:hidden items-center gap-2">
-            <LanguageSwitcher compact />
+            <LanguageSwitcher />
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg bg-neutral-900 border border-neutral-800 text-neutral-400 hover:text-white"
