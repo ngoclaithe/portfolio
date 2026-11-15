@@ -5,7 +5,6 @@ export const ja = {
     projects: "事例紹介",
     liveSystems: "導入・稼働実績",
     skills: "技術領域",
-    articles: "技術ノート",
     contact: "お問い合わせ",
     nda: "NDA遵守",
     expBadge: "実務7年以上",
@@ -60,6 +59,7 @@ export const ja = {
     title: "エンタープライズシステムと設計思想",
     subtitle: "印刷製造業、国際貿易税関、人事労務給与、データ分析基盤など、高信頼性が求められる実案件の技術詳細。",
     sanitizedBadge: "厳格なNDAに基づく匿名化済み",
+    featuredBadge: "主要プロジェクト",
     all: "すべて",
     inspect: "詳細を見る",
     modalNda: "NDA保護注記:",
@@ -88,12 +88,6 @@ export const ja = {
     title: "技術領域と実践的ケーパビリティ",
     subtitle: "形式的な習熟度パーセンテージではなく、7年以上の本番運用で培った実践能力を領域ごとに整理。",
     verifiedBadge: "本番運用で実証されたスキル",
-  },
-  articles: {
-    badge: "技術知見・ノート",
-    title: "実践から得たアーキテクチャ設計論",
-    subtitle: "データベース最適化、分散ステートマシン、IoTテレメトリなどの現場知見を体系化した技術考察録。",
-    postMortemBadge: "実案件のポストモーテム",
   },
   contact: {
     badge: "ビジネス連携・協業",

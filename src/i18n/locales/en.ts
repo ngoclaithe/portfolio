@@ -5,7 +5,6 @@ export const en = {
     projects: "Case Studies",
     liveSystems: "Deployed Projects",
     skills: "Expertise",
-    articles: "Writing",
     contact: "Get in Touch",
     nda: "NDA Compliant",
     expBadge: "7+ Yrs Exp",
@@ -60,6 +59,7 @@ export const en = {
     title: "Enterprise Systems & Architecture",
     subtitle: "In-depth engineering reviews of mission-critical systems designed across manufacturing, logistics, human resources, and high-volume data platforms.",
     sanitizedBadge: "Strict NDA Compliance Sanitization",
+    featuredBadge: "Featured Case Study",
     all: "All",
     inspect: "Inspect",
     modalNda: "NDA Safeguard:",
@@ -88,12 +88,6 @@ export const en = {
     title: "Engineering Domains & Capabilities",
     subtitle: "Organized by architectural domain rather than arbitrary percentage bars. Built on 7+ years of real-world production verification.",
     verifiedBadge: "Verified Production Experience",
-  },
-  articles: {
-    badge: "Engineering Notes",
-    title: "Technical Writing & System Insights",
-    subtitle: "Architectural lessons, database performance tuning, and distributed state management distilled from real-world systems.",
-    postMortemBadge: "Real Engineering Post-Mortems",
   },
   contact: {
     badge: "Let's Collaborate",

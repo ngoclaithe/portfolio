@@ -4,7 +4,30 @@ import { useI18n } from "../i18n/context";
 import { ArrowDown, Github, Mail, ExternalLink, ShieldAlert, Cpu, Database, Server } from "lucide-react";
 
 export const Hero: React.FC = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+
+  const localizedStats = {
+    vi: [
+      { label: "Năm kinh nghiệm thực tế", value: "7+" },
+      { label: "Dự án đã tham gia", value: "20+" },
+      { label: "Dự án đã triển khai", value: "15+" },
+      { label: "Ngôn ngữ cốt lõi", value: "Go • Node.js • Python • SQL" }
+    ],
+    en: [
+      { label: "Years of Practical Experience", value: "7+" },
+      { label: "Enterprise Projects", value: "20+" },
+      { label: "Deployed Systems", value: "15+" },
+      { label: "Core Languages", value: "Go • Node.js • Python • SQL" }
+    ],
+    ja: [
+      { label: "実務開発年数", value: "7年以上" },
+      { label: "参画プロジェクト数", value: "20+" },
+      { label: "本番稼働システム", value: "15+" },
+      { label: "主要開発言語", value: "Go • Node.js • Python • SQL" }
+    ]
+  };
+
+  const currentStats = localizedStats[lang] || localizedStats.en;
 
   return (
     <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden grid-bg">
@@ -119,7 +142,7 @@ export const Hero: React.FC = () => {
 
         {/* Engineering Highlights / Quick Stats */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4 border-t border-neutral-800/80 pt-10 mt-12">
-          {profile.stats.map((stat) => (
+          {currentStats.map((stat) => (
             <div key={stat.label} className="p-4 rounded-xl bg-neutral-900/40 border border-neutral-800/60">
               <div className="text-xl sm:text-2xl font-bold font-mono text-emerald-400 mb-1">{stat.value}</div>
               <div className="text-xs text-neutral-400">{stat.label}</div>

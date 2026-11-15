@@ -1,10 +1,11 @@
 import React from "react";
-import { liveProjects } from "../data/projects";
+import { liveProjectsByLang } from "../data/projects";
 import { useI18n } from "../i18n/context";
 import { ExternalLink, Server, ShieldCheck } from "lucide-react";
 
 export const LiveShowcase: React.FC = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const currentLiveProjects = liveProjectsByLang[lang] || liveProjectsByLang.en;
 
   return (
     <section id="deployed-projects" className="py-20 border-t border-neutral-800/80 bg-neutral-950">
@@ -35,7 +36,7 @@ export const LiveShowcase: React.FC = () => {
 
         {/* Live systems grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {liveProjects.map((item, idx) => (
+          {currentLiveProjects.map((item, idx) => (
             <div
               key={idx}
               className="p-5 rounded-xl bg-neutral-900/50 border border-neutral-800/80 flex flex-col justify-between glass-panel-hover"

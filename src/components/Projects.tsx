@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { projects } from "../data/projects";
+import { projectsByLang } from "../data/projects";
 import { Project } from "../types";
 import { ProjectModal } from "./ProjectModal";
 import { useI18n } from "../i18n/context";
@@ -8,14 +8,15 @@ import { ArrowUpRight, ShieldCheck } from "lucide-react";
 export const Projects: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [activeModalProject, setActiveModalProject] = useState<Project | null>(null);
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const currentProjects = projectsByLang[lang] || projectsByLang.en;
 
   const categories = ["All", "ERP", "HRM", "Data Platform", "LMS", "E-Commerce", "IoT / Embedded"];
 
   const filteredProjects =
     selectedCategory === "All"
-      ? projects
-      : projects.filter((p) => p.category === selectedCategory);
+      ? currentProjects
+      : currentProjects.filter((p) => p.category === selectedCategory);
 
   return (
     <section id="projects" className="py-20 border-t border-neutral-800/80 bg-neutral-950/70">
@@ -129,7 +130,11 @@ export const Projects: React.FC = () => {
 
       {/* Case Study Deep-Dive Modal */}
       <ProjectModal
-        project={activeModalProject}
+        project={
+          activeModalProject
+            ? currentProjects.find((p) => p.id === activeModalProject.id) || activeModalProject
+            : null
+        }
         onClose={() => setActiveModalProject(null)}
       />
     </section>

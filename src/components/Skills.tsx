@@ -1,10 +1,11 @@
 import React from "react";
-import { skillCategories } from "../data/skills";
+import { skillsByLang } from "../data/skills";
 import { useI18n } from "../i18n/context";
 import { Cpu, Server, Database, Radio, Wrench, Check } from "lucide-react";
 
 export const Skills: React.FC = () => {
-  const { t } = useI18n();
+  const { t, lang } = useI18n();
+  const currentSkills = skillsByLang[lang] || skillsByLang.en;
 
   const getCategoryIcon = (index: number) => {
     switch (index) {
@@ -48,7 +49,7 @@ export const Skills: React.FC = () => {
 
         {/* Categories Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {skillCategories.map((category, idx) => (
+          {currentSkills.map((category, idx) => (
             <div
               key={category.title}
               className="p-6 rounded-xl bg-neutral-900/40 border border-neutral-800/80 flex flex-col justify-between glass-panel-hover"

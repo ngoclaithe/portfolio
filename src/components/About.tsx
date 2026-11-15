@@ -42,8 +42,39 @@ export const About: React.FC = () => {
     ]
   };
 
+  const localizedDomains = {
+    vi: [
+      "ERP sản xuất & in ấn",
+      "Hải quan & xuất nhập khẩu",
+      "HRM & tiền lương doanh nghiệp",
+      "Nền tảng đào tạo LMS",
+      "IoT & đo kiểm dữ liệu thiết bị",
+      "Kho dữ liệu phân tích OLAP",
+      "Thương mại điện tử tải cao"
+    ],
+    en: [
+      "Manufacturing & Printing ERP",
+      "Import/Export & Customs",
+      "Enterprise HRM & Payroll",
+      "EdTech LMS",
+      "IoT Edge & Telemetry",
+      "Analytical OLAP Platforms",
+      "High-Volume E-Commerce"
+    ],
+    ja: [
+      "製造業・印刷ERP",
+      "貿易税関・物流管理",
+      "人事労務・自動給与計算",
+      "EdTech・LMS学習基盤",
+      "IoTエッジ・テレメトリ",
+      "OLAP分析データ基盤",
+      "高負荷ECコマース基盤"
+    ]
+  };
+
   const currentLanguages = localizedLanguages[currentLang] || localizedLanguages.en;
   const currentBio = localizedBio[currentLang] || localizedBio.en;
+  const currentDomains = localizedDomains[currentLang] || localizedDomains.en;
 
   return (
     <section id="about" className="py-20 border-t border-neutral-800/80 bg-neutral-950/60">
@@ -140,7 +171,7 @@ export const About: React.FC = () => {
                 <h4 className="font-semibold text-white text-sm">{t("about.domainsTitle")}</h4>
               </div>
               <div className="flex flex-wrap gap-1.5 text-xs">
-                {["Manufacturing & Printing ERP", "Import/Export & Customs", "Enterprise HRM & Payroll", "EdTech LMS", "IoT Edge & Telemetry", "Analytical OLAP Platforms", "High-Volume E-Commerce"].map((domain) => (
+                {currentDomains.map((domain) => (
                   <span key={domain} className="px-2 py-1 rounded bg-neutral-800/80 text-neutral-300 font-mono text-[11px]">
                     {domain}
                   </span>

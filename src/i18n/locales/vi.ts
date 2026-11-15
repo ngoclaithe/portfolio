@@ -5,7 +5,6 @@ export const vi = {
     projects: "Dự án",
     liveSystems: "Dự án đã triển khai",
     skills: "Kỹ năng chuyên môn",
-    articles: "Bài viết",
     contact: "Liên hệ",
     nda: "Tuân thủ NDA",
     expBadge: "7+ năm kinh nghiệm",
@@ -60,6 +59,7 @@ export const vi = {
     title: "Hệ thống doanh nghiệp & kiến trúc phần mềm",
     subtitle: "Case study chuyên sâu về các hệ thống trọng yếu trong ngành in ấn bao bì, thủ tục hải quan xuất nhập khẩu, nhân sự chấm công và nền tảng dữ liệu.",
     sanitizedBadge: "Tuân thủ nghiêm ngặt bảo mật NDA",
+    featuredBadge: "Case study trọng tâm",
     all: "Tất cả",
     inspect: "Chi tiết",
     modalNda: "Bảo mật NDA:",
@@ -88,12 +88,6 @@ export const vi = {
     title: "Lĩnh vực kỹ thuật & khả năng thực chiến",
     subtitle: "Phân nhóm theo miền kiến trúc hệ thống thay vì thanh phần trăm hình thức. Đúc kết qua 7+ năm vận hành thực tế.",
     verifiedBadge: "Kinh nghiệm thực chiến đã xác minh",
-  },
-  articles: {
-    badge: "Ghi chép kỹ thuật",
-    title: "Bài viết chuyên sâu & đúc kết kiến trúc",
-    subtitle: "Những bài học về tối ưu hóa cơ sở dữ liệu, quản lý trạng thái phân tán và xử lý lỗi được rút ra từ các dự án thực tế.",
-    postMortemBadge: "Báo cáo kỹ thuật thực tế",
   },
   contact: {
     badge: "Cùng hợp tác",

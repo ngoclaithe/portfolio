@@ -35,7 +35,7 @@ export const ProjectModal: React.FC<ProjectModalProps> = ({ project, onClose }) 
           </span>
           {project.featured && (
             <span className="px-2 py-0.5 rounded text-[10px] font-mono uppercase bg-neutral-800 text-neutral-300">
-              Featured Case Study
+              {t("projects.featuredBadge")}
             </span>
           )}
         </div>

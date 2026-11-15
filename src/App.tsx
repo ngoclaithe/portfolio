@@ -7,7 +7,6 @@ import { Experience } from "./components/Experience";
 import { Projects } from "./components/Projects";
 import { LiveShowcase } from "./components/LiveShowcase";
 import { Skills } from "./components/Skills";
-import { Articles } from "./components/Articles";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
@@ -23,7 +22,6 @@ export default function App() {
           <Projects />
           <LiveShowcase />
           <Skills />
-          <Articles />
           <Contact />
         </main>
         <Footer />

@@ -45,12 +45,3 @@ export interface LiveProjectStatus {
   stack: string[];
 }
 
-export interface Article {
-  title: string;
-  slug: string;
-  date: string;
-  readTime: string;
-  tags: string[];
-  summary: string;
-  status: "Draft" | "Published" | "Notes";
-}
